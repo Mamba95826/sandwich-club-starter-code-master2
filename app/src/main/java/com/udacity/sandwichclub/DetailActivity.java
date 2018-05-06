@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -62,6 +63,20 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
+        TextView alsoKnownAsText = (TextView) findViewById(R.id.also_known_tv);
+        alsoKnownAsText.setText(sandwich.getAlsoKnownAs() + ", ");
 
+        //Populating ingredients text with JSON
+        TextView ingredientsText = (TextView) findViewById(R.id.ingredients_tv);
+        alsoKnownAsText.setText(sandwich.getIngredients() + ", ");
+
+        //Populating place of origin text with JSON
+        TextView placeOfOriginText = (TextView) findViewById(R.id.origin_tv);
+        placeOfOriginText.setText(sandwich.getPlaceOfOrigin());
+
+        //Populating description text with JSON
+        TextView descriptionText = (TextView) findViewById(R.id.description_tv);
+        descriptionText.setText(sandwich.getDescription());
     }
 }
+
