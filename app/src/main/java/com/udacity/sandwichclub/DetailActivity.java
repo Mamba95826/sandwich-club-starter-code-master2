@@ -69,8 +69,9 @@ public class DetailActivity extends AppCompatActivity {
         TextView originTextView = findViewById(R.id.origin_tv);
         TextView alsoKnownAsLabel = findViewById(R.id.also_know_as_label);
         TextView alsoKnownAsTextView = findViewById(R.id.also_known_tv);
-        TextView descriptionTextview = findViewById(R.id.description_tv);
+        TextView descriptionTextView = findViewById(R.id.description_tv);
         TextView ingredientsTextView = findViewById(R.id.ingredients_tv);
+        String originText = sandwich.getPlaceOfOrigin();
         if (originText.isEmpty()) {
             originTextView.setText(R.string.message_unknown);
 
@@ -81,7 +82,7 @@ public class DetailActivity extends AppCompatActivity {
         List<String> alsoKnownAsList =  sandwich.getAlsoKnownAs();
         if (alsoKnownAsList.size() == 0) {
             alsoKnownAsLabel.setVisibility(View.GONE);
-            alsoKnownAsTextView.setVisibility(View.GONE;
+            alsoKnownAsTextView.setVisibility(View.GONE);
 
         }else {
             alsoKnownAsLabel.setVisibility(View.VISIBLE);
@@ -109,9 +110,9 @@ public class DetailActivity extends AppCompatActivity {
         }
         String description = sandwich.getDescription();
         if (description.isEmpty()) {
-            descriptionTextview.setText(R.string.message_not_available);
+            descriptionTextView.setText(R.string.message_not_available);
         }else{
-            descriptionTextview.setText(description);
+            descriptionTextView.setText(description);
         }
     }
 }
